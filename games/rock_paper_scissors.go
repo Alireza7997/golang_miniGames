@@ -1,12 +1,11 @@
-package RPS
+package games
 
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
-func RPS() {
+func RockPaperScissors() {
 	// Making variables
 	choices := []string{"rock", "paper", "scissors"}
 	var computerChoice string
@@ -15,9 +14,6 @@ func RPS() {
 	var playerPoints int
 	var computerPoints int
 	var rematch string
-
-	// Initializing global pseudo random generator
-	rand.Seed(time.Now().Unix())
 
 	// The Game Begins !!
 	fmt.Println("Select number of rounds to play(3-5-7):")
@@ -31,7 +27,7 @@ func RPS() {
 
 	// The Real Game Begins !!!
 	for i := 0; i < rounds; i++ {
-		computerChoice = choices[rand.Intn(len(choices))]
+		computerChoice = choices[rand.New(source).Intn(len(choices))]
 		fmt.Println("Choose (rock / paper / scissors) :")
 		fmt.Scanln(&playerChoice)
 
@@ -91,7 +87,7 @@ func RPS() {
 	fmt.Scanln(&rematch)
 
 	if rematch == "Yes" || rematch == "yes" {
-		RPS()
+		RockPaperScissors()
 	} else if rematch == "No" || rematch == "no" {
 		fmt.Println("Thanks for playing :)")
 		return
