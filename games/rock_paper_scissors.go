@@ -87,6 +87,7 @@ func RockPaperScissors() {
 	fmt.Scanln(&rematch)
 
 	if rematch == "Yes" || rematch == "yes" {
+		refresh()
 		RockPaperScissors()
 	} else if rematch == "No" || rematch == "no" {
 		fmt.Println("Thanks for playing :)")

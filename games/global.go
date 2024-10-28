@@ -5,6 +5,15 @@ import (
 	"time"
 )
 
-var source = rand.NewSource(time.Now().Unix())
+var (
+	source rand.Source
 
-var random = rand.New(source)
+	random *rand.Rand
+)
+
+var wordCollection = []string{"pineapple", "watermelon", "grapefruit", "blackberry", "blueberry", "raspberry", "octopus", "elephant", "platypus"}
+
+func refresh() {
+	source = rand.NewSource(time.Now().Unix())
+	random = rand.New(source)
+}
