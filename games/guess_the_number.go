@@ -9,7 +9,7 @@ var (
 	max = 100
 )
 
-func GuessTheNumber() {
+func (g minigames) GuessTheNumber() {
 	secretNumber := random.Intn(max-min+1) + min
 
 	fmt.Println("Welcome to the Guessing Game!")

@@ -8,13 +8,12 @@ import (
 
 var (
 	guesses int
-	words   = []string{"dog", "cat", "girrafe", "rat"}
 )
 
-func Hangman() {
-	randomNumber := random.Intn(len(words))
+func (g minigames) Hangman() {
+	randomNumber := random.Intn(len(wordCollection))
 
-	word := strings.ToLower(words[randomNumber])
+	word := strings.ToLower(wordCollection[randomNumber])
 	length := len(word)
 	wordShown := word
 	guesses = length

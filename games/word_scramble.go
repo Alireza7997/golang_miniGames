@@ -2,7 +2,7 @@ package games
 
 import "fmt"
 
-func WordScramble() {
+func (g minigames) WordScramble() {
 	word := wordCollection[random.Intn(len(wordCollection))]
 	scrambled := scramble(word)
 	var guess string

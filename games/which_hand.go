@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func WhichHand() {
+func (g minigames) WhichHand() {
 	var (
 		goal   int
 		choice int

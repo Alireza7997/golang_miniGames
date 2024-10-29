@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func RockPaperScissors() {
+func (g minigames) RockPaperScissors() {
 	// Making variables
 	choices := []string{"rock", "paper", "scissors"}
 	var computerChoice string
@@ -87,7 +87,7 @@ func RockPaperScissors() {
 
 	if rematch == "Yes" || rematch == "yes" {
 		refresh()
-		RockPaperScissors()
+		g.RockPaperScissors()
 	} else if rematch == "No" || rematch == "no" {
 		fmt.Println("Thanks for playing :)")
 		return
