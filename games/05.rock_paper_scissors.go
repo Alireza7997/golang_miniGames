@@ -86,13 +86,13 @@ func (g minigames) RockPaperScissors() {
 	fmt.Scanln(&rematch)
 
 	if rematch == "Yes" || rematch == "yes" {
-		refresh()
+		refreshSeed()
 		g.RockPaperScissors()
 	} else if rematch == "No" || rematch == "no" {
 		fmt.Println("Thanks for playing :)")
 		return
 	} else {
-		fmt.Println("Fuck You :)")
+		fmt.Println("Invalid :)")
 		return
 	}
 }
