@@ -2,7 +2,6 @@ package games
 
 import (
 	"fmt"
-	"math/rand"
 )
 
 func RockPaperScissors() {
@@ -27,7 +26,7 @@ func RockPaperScissors() {
 
 	// The Real Game Begins !!!
 	for i := 0; i < rounds; i++ {
-		computerChoice = choices[rand.New(source).Intn(len(choices))]
+		computerChoice = choices[random.Intn(len(choices))]
 		fmt.Println("Choose (rock / paper / scissors) :")
 		fmt.Scanln(&playerChoice)
 

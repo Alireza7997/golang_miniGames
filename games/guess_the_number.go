@@ -2,7 +2,6 @@ package games
 
 import (
 	"fmt"
-	"math/rand"
 )
 
 var (
@@ -11,7 +10,7 @@ var (
 )
 
 func GuessTheNumber() {
-	secretNumber := rand.New(source).Intn(max-min+1) + min
+	secretNumber := random.Intn(max-min+1) + min
 
 	fmt.Println("Welcome to the Guessing Game!")
 	fmt.Println()

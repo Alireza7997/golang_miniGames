@@ -17,3 +17,7 @@ func refresh() {
 	source = rand.NewSource(time.Now().Unix())
 	random = rand.New(source)
 }
+
+func init() {
+	refresh()
+}

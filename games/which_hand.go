@@ -2,7 +2,6 @@ package games
 
 import (
 	"fmt"
-	"math/rand"
 )
 
 func WhichOne() {
@@ -11,11 +10,11 @@ func WhichOne() {
 		choice int
 	)
 
-	goal = rand.New(source).Intn(2) + 1
+	goal = random.Intn(2) + 1
 
 	fmt.Print("Guess which hand the goal is in: \n")
 	drawHands()
-	fmt.Print("\nYour choice:")
+	fmt.Print("Your choice:")
 	fmt.Scan(&choice)
 
 	fmt.Println(goal)
@@ -34,5 +33,5 @@ func drawHands() {
 	fmt.Println("| | | | |       | | | | |")
 	fmt.Println("|_|_|_|_||     ||_|_|_|_|")
 	fmt.Println("   (1)             (2)   ")
-
+	fmt.Println()
 }

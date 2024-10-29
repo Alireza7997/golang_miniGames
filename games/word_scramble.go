@@ -3,7 +3,6 @@ package games
 import "fmt"
 
 func WordScramble() {
-	refresh()
 	word := wordCollection[random.Intn(len(wordCollection))]
 	scrambled := scramble(word)
 	var guess string
