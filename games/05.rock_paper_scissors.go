@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func (g minigames) RockPaperScissors() {
+func (m minigames) RockPaperScissors() {
 	// Making variables
 	choices := []string{"rock", "paper", "scissors"}
 	var computerChoice string
@@ -79,4 +79,6 @@ func (g minigames) RockPaperScissors() {
 		fmt.Println("Game Result : Draw")
 	}
 	fmt.Println("**********")
+
+	rematch(m.RockPaperScissors)
 }

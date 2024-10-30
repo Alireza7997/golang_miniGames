@@ -10,7 +10,7 @@ var (
 	guesses int
 )
 
-func (g minigames) Hangman() {
+func (m minigames) Hangman() {
 	randomNumber := random.Intn(len(wordCollection))
 
 	word := strings.ToLower(wordCollection[randomNumber])
@@ -38,11 +38,11 @@ func (g minigames) Hangman() {
 		if !strings.Contains(wordShown, "_") {
 			fmt.Println("\033[32m" + "You Won!" + "\033[0m")
 			fmt.Println("The word was: " + "\033[32m" + word + "\033[0m")
-			return
+			break
 		} else if guesses == 0 {
 			fmt.Println("\033[31m" + "You Lost! The man has been hanged! (×_×)" + "\033[0m")
 			fmt.Println("The word was: " + "\033[32m" + word + "\033[0m")
-			return
+			break
 		}
 
 		fmt.Println("\n\033[33mWord:\033[0m " + wordShown + "\n")
@@ -66,7 +66,7 @@ func (g minigames) Hangman() {
 		if guess == word {
 			fmt.Println("\033[32m" + "You Won!" + "\033[0m")
 			fmt.Println("The word was: " + "\033[32m" + word + "\033[0m")
-			return
+			break
 		}
 
 		contains := strings.Contains(word, guess)
@@ -88,6 +88,9 @@ func (g minigames) Hangman() {
 		}
 
 	}
+
+	rematch(m.Hangman)
+
 }
 
 func replaceNthChar(s string, n int, newChar string) string {

@@ -9,7 +9,7 @@ var (
 	max = 100
 )
 
-func (g minigames) GuessTheNumber() {
+func (m minigames) GuessTheNumber() {
 	secretNumber := random.Intn(max-min+1) + min
 
 	fmt.Println("Welcome to the Guessing Game!")
@@ -46,4 +46,6 @@ func (g minigames) GuessTheNumber() {
 
 		}
 	}
+
+	rematch(m.GuessTheNumber)
 }

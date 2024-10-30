@@ -2,7 +2,7 @@ package games
 
 import "fmt"
 
-func (g minigames) WordScramble() {
+func (m minigames) WordScramble() {
 	word := wordCollection[random.Intn(len(wordCollection))]
 	scrambled := scramble(word)
 	var guess string
@@ -16,6 +16,7 @@ func (g minigames) WordScramble() {
 		fmt.Printf("Wrong! the answer is: %s\n", word)
 	}
 
+	rematch(m.WordScramble)
 }
 
 func scramble(word string) string {

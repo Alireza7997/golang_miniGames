@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func (g minigames) WhichHand() {
+func (m minigames) WhichHand() {
 	var (
 		goal   int
 		choice int
@@ -25,6 +25,8 @@ func (g minigames) WhichHand() {
 	} else {
 		fmt.Println("Incorrect")
 	}
+
+	rematch(m.WhichHand)
 }
 
 // Will be enhanced later :D
