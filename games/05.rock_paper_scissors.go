@@ -12,7 +12,6 @@ func (g minigames) RockPaperScissors() {
 	var rounds int
 	var playerPoints int
 	var computerPoints int
-	var rematch string
 
 	// The Game Begins !!
 	fmt.Println("Select number of rounds to play(3-5-7):")
@@ -80,19 +79,4 @@ func (g minigames) RockPaperScissors() {
 		fmt.Println("Game Result : Draw")
 	}
 	fmt.Println("**********")
-
-	// Asking if the player wants to player another game
-	fmt.Println("Want to play another Game ? (Yes/No)")
-	fmt.Scanln(&rematch)
-
-	if rematch == "Yes" || rematch == "yes" {
-		refreshSeed()
-		g.RockPaperScissors()
-	} else if rematch == "No" || rematch == "no" {
-		fmt.Println("Thanks for playing :)")
-		return
-	} else {
-		fmt.Println("Invalid :)")
-		return
-	}
 }
