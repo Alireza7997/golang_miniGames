@@ -1,9 +1,9 @@
 package main
 
-import "github.com/alireza/minigames/games"
+import "github.com/alireza/golang_Minigames/minigames"
 
 func main() {
-	minigames := games.New()
-	minigames.Start()
+	Minigames := minigames.New()
+	Minigames.Start()
 
 }

@@ -1,4 +1,4 @@
-module github.com/alireza/minigames
+module github.com/alireza/golang_Minigames
 
 go 1.22.1
 
