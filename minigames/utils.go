@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
+
+	"github.com/alireza/golang_Minigames/minigames/collections"
 )
 
 func listGames(m *Minigames) (games []game) {
@@ -40,12 +42,23 @@ func rematch(minigame func()) {
 	fmt.Println("\033[1;34m" + "====================================" + "\033[0m")
 	fmt.Scanln(&choice)
 
+	clear()
 	switch choice {
 	case "yes", "y", "yep":
 		refreshSeed()
 		minigame()
 	case "no", "n", "nope":
+		fmt.Println("Thanks For Playing")
 	default:
 		rematch(minigame)
 	}
+}
+
+func setCollection() {
+	collections.SetCategory()
+	wordCollection = collections.SetWordCollection()
+}
+
+func clear() {
+	fmt.Print("\033[2J\033[H")
 }

@@ -5,7 +5,7 @@ import (
 )
 
 func (m Minigames) RockPaperScissors() {
-	// Making variables
+
 	choices := []string{"rock", "paper", "scissors"}
 	var computerChoice string
 	var playerChoice string
@@ -13,17 +13,14 @@ func (m Minigames) RockPaperScissors() {
 	var playerPoints int
 	var computerPoints int
 
-	// The Game Begins !!
 	fmt.Println("Select number of rounds to play(3-5-7):")
 	fmt.Scanln(&rounds)
 
-	// Checking if the entered number of rounds is valid
 	if rounds != 3 && rounds != 5 && rounds != 7 {
 		fmt.Println("Invalid number of rounds!!!")
 		return
 	}
 
-	// The Real Game Begins !!!
 	for i := 0; i < rounds; i++ {
 		computerChoice = choices[random.Intn(len(choices))]
 		fmt.Println("Choose (rock / paper / scissors) :")

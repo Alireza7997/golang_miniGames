@@ -43,20 +43,20 @@ var wordCollections = map[string]map[string][]string{
 }
 
 func SetWordCollection() []string {
-	setCategory()
-	setDifficulty()
-
 	titleCaser := cases.Title(language.English)
 
 	fmt.Println("\033[1;33m" + "====================================" + "\033[0m")
-	fmt.Println("\033[1;33m" + "          Category:   " + titleCaser.String(category) + "\033[0m")
+	if category != "" {
+
+		fmt.Println("\033[1;33m" + "          Category:   " + titleCaser.String(category) + "\033[0m")
+	}
 	fmt.Println("\033[1;33m" + "          Difficulty: " + titleCaser.String(difficulty) + "\033[0m")
 	fmt.Println("\033[1;33m" + "====================================" + "\033[0m")
 
 	return wordCollections[category][difficulty]
 }
 
-func setCategory() {
+func SetCategory() {
 	titleCaser := cases.Title(language.English)
 
 	fmt.Println("\033[1;34m" + "====================================" + "\033[0m")
@@ -100,7 +100,7 @@ func setCategory() {
 	clear()
 }
 
-func setDifficulty() {
+func SetDifficulty() {
 	titleCaser := cases.Title(language.English)
 
 	fmt.Println("\033[1;34m" + "======================================" + "\033[0m")

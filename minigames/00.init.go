@@ -3,8 +3,6 @@ package minigames
 import (
 	"math/rand"
 	"time"
-
-	"github.com/alireza/golang_Minigames/minigames/collections"
 )
 
 var (
@@ -15,7 +13,6 @@ var (
 
 func init() {
 	refreshSeed()
-	wordCollection = collections.SetWordCollection()
 }
 
 func refreshSeed() {

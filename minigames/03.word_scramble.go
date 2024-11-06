@@ -5,6 +5,8 @@ import (
 )
 
 func (m Minigames) WordScramble() {
+	setCollection()
+
 	word := wordCollection[random.Intn(len(wordCollection))]
 	scrambled := scramble(word)
 	var guess string

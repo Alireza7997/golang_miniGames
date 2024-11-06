@@ -11,6 +11,8 @@ var (
 )
 
 func (m Minigames) Hangman() {
+	setCollection()
+
 	randomNumber := random.Intn(len(wordCollection))
 
 	word := strings.ToLower(wordCollection[randomNumber])
