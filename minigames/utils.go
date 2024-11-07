@@ -37,9 +37,12 @@ func formatGameName(name string) string {
 
 func rematch(minigame func()) {
 	var choice string
-	fmt.Println("\033[1;34m" + "====================================" + "\033[0m")
-	fmt.Println("\033[1;34m" + "         Play Again?(yes/no)" + "\033[0m]")
-	fmt.Println("\033[1;34m" + "====================================" + "\033[0m")
+
+	fmt.Print("\033[1;34m")
+	fmt.Println("====================================")
+	fmt.Println("         Play Again?(yes/no)")
+	fmt.Println("====================================")
+	fmt.Print("\033[1;0m")
 	fmt.Scanln(&choice)
 
 	clear()

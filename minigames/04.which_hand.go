@@ -10,21 +10,27 @@ func (m Minigames) WhichHand() {
 		choice int
 	)
 
+	fmt.Print("\033[1;34m")
+	fmt.Println("=======================================")
+	fmt.Println("               Which Hand              ")
+	fmt.Println("=======================================")
+	fmt.Print("\033[0m")
+
 	goal = random.Intn(2) + 1
 
-	fmt.Print("Guess which hand the goal is in: \n")
+	fmt.Print("\033[1;36m" + "\nGuess which hand the goal is in: \n" + "\033[0m")
 	drawHands()
-	fmt.Print("Your choice:")
+	fmt.Print("\033[1m" + "Your choice:")
 	fmt.Scan(&choice)
 
-	fmt.Println(goal)
 	if goal == choice {
-		fmt.Println("Correct!")
+		fmt.Print("\033[1;32m" + "Correct!")
 	} else if choice < 1 || choice > 2 {
-		fmt.Println("Incorrect, but nice try")
+		fmt.Print("\033[1;31m" + "Invalid choice")
 	} else {
-		fmt.Println("Incorrect")
+		fmt.Print("\033[1;31m" + "Incorrect")
 	}
+	fmt.Printf("\nThe goal was in hand \033[1;32m%d\n\n", goal)
 
 	rematch(m.WhichHand)
 }

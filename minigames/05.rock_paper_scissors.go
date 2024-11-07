@@ -10,32 +10,34 @@ func (m Minigames) RockPaperScissors() {
 	var computerChoice, playerChoice string
 	var rounds, playerPoints, computerPoints int
 
-	fmt.Println("===================================")
-	fmt.Println("     Welcome to Rock-Paper-Scissors")
-	fmt.Println("===================================")
-	fmt.Print("Enter number of rounds to play (3, 5, or 7): ")
+	fmt.Print("\033[1;34m")
+	fmt.Println("=======================================")
+	fmt.Println("           Rock-Paper-Scissors         ")
+	fmt.Println("=======================================")
+	fmt.Print("\033[1;36m" + "\nEnter number of rounds to play (3 / 5 / 7): ")
+	fmt.Print("\033[1;0m")
 	fmt.Scanln(&rounds)
 
 	if rounds != 3 && rounds != 5 && rounds != 7 {
-		fmt.Println("\nError: Invalid number of rounds! Please choose 3, 5, or 7.")
+		fmt.Println("\033[1;31m" + "\nError: Invalid number of rounds! Please choose 3, 5, or 7." + "\033[1;36m")
 		return
 	}
-
-	fmt.Println("\nLet the game begin!")
 
 	for i := 0; i < rounds; i++ {
 		computerChoice = choices[random.Intn(len(choices))]
 
-		fmt.Println("\n-----------------------------")
-		fmt.Printf("Round %d\n", i+1)
-		fmt.Println("-----------------------------")
+		fmt.Print("\033[1;33m")
+		fmt.Println("\n============================")
+		fmt.Printf("          Round %d\n", i+1)
+		fmt.Println("============================")
+		fmt.Print("\033[0m")
 
-		fmt.Print("Your choice (1.Rock / 2.Paper / 3.Scissors): ")
+		fmt.Print("\033[1;36m" + "Choose (1.Rock / 2.Paper / 3.Scissors): " + "\033[0m")
 		fmt.Scanln(&playerChoice)
 		playerChoice = strings.ToLower(playerChoice)
 
 		fmt.Print(getAsciiArt(playerChoice))
-		fmt.Printf("\nComputer chose: %s", computerChoice)
+		fmt.Printf("\nComputer chose: ")
 		fmt.Print(getAsciiArt(computerChoice))
 
 		outcomeMessage := ""
@@ -43,58 +45,58 @@ func (m Minigames) RockPaperScissors() {
 		case "rock", "1":
 			switch computerChoice {
 			case "rock":
-				outcomeMessage = "It's a draw!"
+				outcomeMessage = "\033[1;33m" + "It's a draw" + "\033[0m"
 			case "paper":
-				outcomeMessage = "You lost this round."
+				outcomeMessage = "\033[1;31m" + "You lost this round" + "\033[0m"
 				computerPoints++
 			case "scissors":
-				outcomeMessage = "You won this round!"
+				outcomeMessage = "\033[1;32m" + "You won this round" + "\033[0m"
 				playerPoints++
 			}
 		case "paper", "2":
 			switch computerChoice {
 			case "rock":
-				outcomeMessage = "You won this round!"
+				outcomeMessage = "\033[1;32m" + "You won this round" + "\033[0m"
 				playerPoints++
 			case "paper":
-				outcomeMessage = "It's a draw!"
+				outcomeMessage = "\033[1;33m" + "It's a draw" + "\033[0m"
 			case "scissors":
-				outcomeMessage = "You lost this round."
+				outcomeMessage = "\033[1;31m" + "You lost this round" + "\033[0m"
 				computerPoints++
 			}
 		case "scissors", "3":
 			switch computerChoice {
 			case "rock":
-				outcomeMessage = "You lost this round."
+				outcomeMessage = "\033[1;31m" + "You lost this round" + "\033[0m"
 				computerPoints++
 			case "paper":
-				outcomeMessage = "You won this round!"
+				outcomeMessage = "\033[1;32m" + "You won this round" + "\033[0m"
 				playerPoints++
 			case "scissors":
-				outcomeMessage = "It's a draw!"
+				outcomeMessage = "\033[1;33m" + "It's a draw" + "\033[0m"
 			}
 		}
 
-		fmt.Println("-----------------------------")
-		fmt.Printf("Outcome: %s\n", outcomeMessage)
-		fmt.Println("-----------------------------")
+		fmt.Println("\033[1m" + "\n============================" + "\033[0m")
+		fmt.Printf("\033[1m"+"Outcome: %s\n", outcomeMessage)
+		fmt.Println("\033[1m" + "============================" + "\033[0m")
 	}
 
-	fmt.Println("\n===================================")
-	fmt.Println("               Final Results")
-	fmt.Println("===================================")
-	fmt.Printf("You: %d points\n", playerPoints)
-	fmt.Printf("Computer: %d points\n", computerPoints)
-	fmt.Println("===================================")
+	fmt.Println("\033[1m" + "\n===================================" + "\033[0m")
+	fmt.Println("          \033[36mFinal Results\033[0m              ")
+	fmt.Println("\033[1m" + "===================================  " + "\033[0m")
+	fmt.Printf("\033[1m"+"You: %d points\n"+"\033[0m", playerPoints)
+	fmt.Printf("\033[1m"+"Computer: %d points\n", computerPoints)
+	fmt.Println("\033[1m" + "===================================" + "\033[0m")
 
 	if playerPoints > computerPoints {
-		fmt.Println("Congratulations! You won the game!")
+		fmt.Println("\033[1;32m" + "Congratulations! You won the game!" + "\033[0m")
 	} else if computerPoints > playerPoints {
-		fmt.Println("The computer wins the game. Better luck next time!")
+		fmt.Println("\033[1;31m" + "The computer wins the game. Better luck next time!" + "\033[0m")
 	} else {
-		fmt.Println("The game is a draw. Well played!")
+		fmt.Println("\033[1;33m" + "The game is a draw. Well played!" + "\033[0m")
 	}
-	fmt.Println("===================================")
+	fmt.Println("\033[1;31m" + "===================================" + "\033[0m")
 
 	rematch(m.RockPaperScissors)
 }

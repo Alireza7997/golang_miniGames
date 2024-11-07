@@ -7,18 +7,26 @@ import (
 func (m Minigames) WordScramble() {
 	setCollection()
 
+	fmt.Print("\033[1;34m")
+	fmt.Println("=======================================")
+	fmt.Println("             Word Scramble             ")
+	fmt.Println("=======================================")
+	fmt.Print("\033[0m")
+
 	word := wordCollection[random.Intn(len(wordCollection))]
 	scrambled := scramble(word)
 	var guess string
 
-	fmt.Printf("Scrambled word: %s\nEnter the actual word: ", scrambled)
+	fmt.Printf("\033[1;33m\nScrambled word: %s\n\033[1;36mEnter the actual word: ", scrambled)
 	fmt.Scan(&guess)
 
+	fmt.Println("\033[1;37m\n==============================\033[0m")
 	if guess == word {
-		fmt.Println("Correct! you guessed well")
+		fmt.Println("\033[1;32m" + "Correct! you guessed well")
 	} else {
-		fmt.Printf("Wrong! the answer is: %s\n", word)
+		fmt.Printf("\033[1;31m"+"Wrong! the answer is: %s\n", word)
 	}
+	fmt.Println("\033[1;37m==============================\n\033[0m")
 
 	rematch(m.WordScramble)
 }
