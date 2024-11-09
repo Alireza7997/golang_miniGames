@@ -5,7 +5,6 @@ import (
 )
 
 func (m Minigames) WordScramble() {
-	setCollection()
 
 	fmt.Print("\033[1;34m")
 	fmt.Println("=======================================")

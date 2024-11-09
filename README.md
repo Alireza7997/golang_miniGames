@@ -5,7 +5,7 @@ Welcome to the Mini-Game Collection! This repository contains a variety of simpl
 ## Features
 
 - **Multiple Categories**: Choose from various categories such as Animals, Fruits, Colors, Names, and Countries.
-- **Difficulty Levels**: Words are categorized into different difficulty levels: Easy, Medium, and Hard.
+- **Difficulty Levels**: Words are categorized into different Difficulty levels: Easy, Medium, and Hard.
 - **Smooth User Experience**: Designed with user-friendliness in mind, providing an intuitive interface.
 
 ## List of Games

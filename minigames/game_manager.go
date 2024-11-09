@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/alireza/golang_Minigames/minigames/collections"
+	"github.com/alireza/golang_Minigames/minigames/setting"
 )
 
 type Minigames struct{}
@@ -51,7 +51,11 @@ func (m *Minigames) Start() {
 			if gameName, exists := gamesMap[num]; exists {
 				for _, game := range games {
 					if game.Name == gameName {
-						collections.SetDifficulty()
+						setDifficulty()
+						if setting.GamesWithCollection[game.Name] {
+							setCollections()
+						}
+						printSetting()
 						game.Value.Call(nil)
 						clear()
 						return
