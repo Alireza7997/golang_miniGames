@@ -2,16 +2,18 @@ package minigames
 
 import (
 	"fmt"
+
+	"github.com/alireza/golang_Minigames/minigames/setting"
 )
 
 var (
-	min = 1
-	max = 100
+	min        int
+	max        int
+	maxGuesses int
 )
 
 func (m Minigames) GuessTheNumber() {
-	secretNumber := random.Intn(max-min+1) + min
-
+	setGTNDiff()
 	fmt.Print("\033[1;34m")
 	fmt.Println("=======================================")
 	fmt.Println("              Guessing Game            ")
@@ -19,7 +21,7 @@ func (m Minigames) GuessTheNumber() {
 	fmt.Print("\033[1;0")
 	fmt.Printf("\033[1;36m\nGuess a number between [%d and %d]:\033[0m \n", min, max)
 
-	maxGuesses := 6
+	secretNumber := random.Intn(max-min+1) + min
 
 	for guesses := maxGuesses - 1; guesses >= 0; guesses-- {
 		var guess int
@@ -50,4 +52,22 @@ func (m Minigames) GuessTheNumber() {
 	}
 
 	rematch(m.GuessTheNumber)
+}
+
+func setGTNDiff() {
+	diff := setting.Difficulty
+
+	if diff == "Easy" {
+		min = 1
+		max = 100
+		maxGuesses = 8
+	} else if diff == "Medium" {
+		min = 1
+		max = 200
+		maxGuesses = 6
+	} else {
+		min = 1
+		max = 400
+		maxGuesses = 6
+	}
 }
