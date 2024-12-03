@@ -96,7 +96,7 @@ func (m Minigames) RockPaperScissors() {
 	} else {
 		fmt.Println("\033[1;33m" + "The game is a draw. Well played!" + "\033[0m")
 	}
-	fmt.Println("\033[1;31m" + "===================================" + "\033[0m")
+	fmt.Println("\033[1m" + "===================================" + "\033[0m")
 
 	rematch(m.RockPaperScissors)
 }

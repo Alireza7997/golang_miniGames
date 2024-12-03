@@ -76,7 +76,7 @@ func (m *Minigames) Start() {
 		// 		}
 		// 	}
 		// }
-
+		clear()
 		fmt.Println("\033[1;31m" + "====================================" + "\033[0m")
 		fmt.Println("\033[1;31m" + "Invalid selection. Please try again." + "\033[0m")
 		fmt.Println("\033[1;31m" + "====================================" + "\033[0m")
