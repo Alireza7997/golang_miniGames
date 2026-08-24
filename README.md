@@ -1,12 +1,13 @@
 # Golang Mini-Games (in-terminal)
 
-Welcome to the Mini-Game Collection! This repository contains a variety of simple and fun mini-games designed to provide entertainment.
+Welcome to the Mini-Game Collection! This repository contains a variety of simple and fun terminal-based mini-games written in Go, designed to provide entertainment.
 
 ## Features
 
-- **Multiple Categories**: Choose from various categories such as Animals, Fruits, Colors, Names, and Countries.
-- **Difficulty Levels**: Words are categorized into different Difficulty levels: Easy, Medium, and Hard.
-- **Smooth User Experience**: Designed with user-friendliness in mind, providing an intuitive interface.
+- **Multiple Games**: Five classic mini-games in a single interactive menu.
+- **Multiple Categories**: For word games, choose from categories such as Animals, Fruits, Colors, Names, and Countries.
+- **Difficulty Levels**: Words are categorized into different difficulty levels: Easy, Medium, and Hard.
+- **Smooth User Experience**: Colorful, user-friendly terminal interface.
 
 ## List of Games
 
@@ -18,9 +19,27 @@ Welcome to the Mini-Game Collection! This repository contains a variety of simpl
 
 ## Getting Started
 
-To play these games, clone the repository and run the game of your choice using Go.
+### Requirements
+
+- [Go](https://go.dev/dl/) 1.22 or later
+
+### Installation
+
+Clone the repository and run the game of your choice using Go.
 
 ```bash
 git clone https://github.com/Alireza7997/golang_Minigames.git
 cd golang_Minigames
 go run main.go
+```
+
+### How to Play
+
+1. Pick a mini-game from the main menu by entering its number.
+2. Select a difficulty level (Easy / Medium / Hard).
+3. For word games, choose a word category.
+4. Have fun!
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
