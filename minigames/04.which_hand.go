@@ -3,7 +3,7 @@ package minigames
 import (
 	"fmt"
 
-	"github.com/alireza/golang_Minigames/minigames/setting"
+	"github.com/alireza/go_minigames/minigames/setting"
 )
 
 func (m Minigames) WhichHand() {

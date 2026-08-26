@@ -1,6 +1,6 @@
 package main
 
-import "github.com/alireza/golang_Minigames/minigames"
+import "github.com/alireza/go_minigames/minigames"
 
 func main() {
 	Minigames := minigames.New()

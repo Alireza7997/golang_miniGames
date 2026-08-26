@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/alireza/golang_Minigames/minigames/setting"
+	"github.com/alireza/go_minigames/minigames/setting"
 )
 
 type Minigames struct{}

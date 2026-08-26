@@ -28,8 +28,8 @@ Welcome to the Mini-Game Collection! This repository contains a variety of simpl
 Clone the repository and run the game of your choice using Go.
 
 ```bash
-git clone https://github.com/Alireza7997/golang_Minigames.git
-cd golang_Minigames
+git clone https://github.com/Alireza7997/go_minigames.git
+cd go_minigames
 go run main.go
 ```
 

@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/alireza/golang_Minigames/minigames/setting"
+	"github.com/alireza/go_minigames/minigames/setting"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 )
